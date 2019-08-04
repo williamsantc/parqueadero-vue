@@ -1,6 +1,6 @@
 # parqueadero-vue
 
-> My mind-blowing Nuxt.js project
+> Vue + Nuxt + class based components + typeScript + state management pattern
 
 ## Build Setup
 
