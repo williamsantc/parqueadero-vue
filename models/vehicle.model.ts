@@ -1,6 +1,6 @@
 export default interface Vehicle {
+  licencePlate: string | null
   vehicleType: vehicleTyes | null
-  engineDisplacement?: string | null
   brand: string | null
   model: string | null
   year: number | null

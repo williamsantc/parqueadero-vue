@@ -1,4 +1,5 @@
 import { ActionTree, MutationTree } from 'vuex'
+import VuexPersistence from 'vuex-persist'
 import State from '~/models/state.model'
 import Vehicle from '~/models/vehicle.model'
 import { MUTATIONS, ACTIONS } from '~/models/store.model'
@@ -14,7 +15,7 @@ export const mutations: MutationTree<State> = {
   [MUTATIONS.ADD_VEHICLE]: (state, payload: Vehicle) => {
     const ticket: Ticket = {
       vehicle: payload,
-      entyTime: new Date()
+      entryTime: new Date()
     }
     state.vehiclesInParking.push(ticket)
   },
@@ -28,3 +29,9 @@ export const actions: ActionTree<State, State> = {
     context.commit(MUTATIONS.ADD_VEHICLE, payload)
   }
 }
+
+const vuexLocal = new VuexPersistence({
+  storage: window.localStorage
+})
+
+export const plugins = [vuexLocal.plugin]
