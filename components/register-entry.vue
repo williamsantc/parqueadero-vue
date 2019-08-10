@@ -11,13 +11,13 @@
       <b-form-group label="Marca">
         <b-input v-model="vehicle.brand" />
       </b-form-group>
-      <b-form-group label="Model">
+      <b-form-group label="Modelo">
         <b-input v-model="vehicle.model" />
       </b-form-group>
       <b-form-group label="Año">
         <b-input v-model="vehicle.year" />
       </b-form-group>
-      <b-form-group label="Placa">
+      <b-form-group label="Tipo de vehiculo">
         <b-select :options="vehicleTypesAvailables" v-model="vehicle.vehicleType" />
       </b-form-group>
       <template slot="modal-footer">
