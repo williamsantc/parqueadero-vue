@@ -11,7 +11,8 @@
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
+        <b-navbar-nav class="ml-auto align-items-center">
+          <b-nav-text class="mr-md-2">{{ vehiclesInParking.length }} Vehiculos</b-nav-text>
           <b-link variant="primary" target="_blank" href="https://twitter.com/williamsantc">Follow me!</b-link>
         </b-navbar-nav>
       </b-collapse>
@@ -24,9 +25,12 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import { State } from 'vuex-class'
+import Ticket from '../models/ticket.model'
 
 @Component
 export default class DefaultLayout extends Vue {
+  @State readonly vehiclesInParking!: Ticket[]
   navigate (route: string) {
     this.$router.push(route)
   }
